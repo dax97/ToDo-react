@@ -81,6 +81,15 @@ function App(props) {
       completed:true,
     } */
   }
+
+  console.log('Render (antes del useEffect)');
+
+  React.useEffect(() => {
+    console.log('use effect');
+  }, [totalTodos]);
+
+  console.log('Render luego del useEffect');
+
   return (
     <AppUI
       totalTodos={totalTodos}
