@@ -25,3 +25,9 @@
 {
     transform: rotate(224deg);
 }
+
+.CreateTodoButton:enabled
+{
+    z-index: 4;
+}
+
