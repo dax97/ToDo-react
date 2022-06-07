@@ -12,6 +12,10 @@ function CreateTodoButton(props)
         {
             props.setOpenModal(false);
         }
+
+        /* solución del profe 
+
+        props.setOpenModal(prevState => !prevState); */
     }
 
     return (

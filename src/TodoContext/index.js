@@ -33,25 +33,38 @@ function TodoProvider(props){
     
     }
 
+    const addTodo = (text) => {
+        const newTodos = [...todos];
+        newTodos.push({
+            completed: false,
+            text,
+        });
+        saveTodos(newTodos);
+        /* todos[todoIndex] = {
+            text: todos[todoIndex].text,
+            completed:true,
+        } */
+    }
+
     const completeTodo = (text) => {
-    const todoIndex = todos.findIndex(todo => todo.text === text);
-    const newTodos = [...todos];
-    newTodos[todoIndex].completed = true;
-    saveTodos(newTodos);
-    /* todos[todoIndex] = {
-        text: todos[todoIndex].text,
-        completed:true,
-    } */
+        const todoIndex = todos.findIndex(todo => todo.text === text);
+        const newTodos = [...todos];
+        newTodos[todoIndex].completed = true;
+        saveTodos(newTodos);
+        /* todos[todoIndex] = {
+            text: todos[todoIndex].text,
+            completed:true,
+        } */
     }
     const deleteTodo = (text) => {
-    const todoIndex = todos.findIndex(todo => todo.text === text);
-    const newTodos = [...todos];
-    newTodos.splice(todoIndex, 1);
-    saveTodos(newTodos);
-    /* todos[todoIndex] = {
-        text: todos[todoIndex].text,
-        completed:true,
-    } */
+        const todoIndex = todos.findIndex(todo => todo.text === text);
+        const newTodos = [...todos];
+        newTodos.splice(todoIndex, 1);
+        saveTodos(newTodos);
+        /* todos[todoIndex] = {
+            text: todos[todoIndex].text,
+            completed:true,
+        } */
     }    
     return(
         <TodoContext.Provider value={{
@@ -62,6 +75,7 @@ function TodoProvider(props){
             searchValue,
             setSearchValue,
             searchedTodos,
+            addTodo,
             completeTodo,
             deleteTodo,
             openModal,
