@@ -23,7 +23,7 @@ function useTodos(){
     }
     else
     {
-    searchedTodos = todos.filter(todo => {
+        searchedTodos = todos.filter(todo => {
         const todoText = todo.text.toLowerCase();
         const searchText = searchValue.toLocaleLowerCase();
         return todoText.includes(searchText);
